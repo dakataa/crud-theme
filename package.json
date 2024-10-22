@@ -2,13 +2,12 @@
   "name": "@dakataa/crud-theme",
   "version": "1.0.0",
   "description": "Dakataa CRUD Bootstrap Theme",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/dakataa/crud-theme.git"
+    "url": "git+https://github.com/dakataa/crud-theme.git"
   },
   "keywords": [
     "CRUD",

@@ -486,83 +486,19 @@ body {
   header {
     --nav-gutter: calc(((var(--content-width) - 100%) / 2));
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     .title {
-      margin: 0;
+
     }
 
-    .wrap {
-      position: relative;
-
-      nav {
-        display: flex;
-        align-items: flex-end;
-        overflow-x: auto;
-        flex-wrap: nowrap;
+    nav {
         padding: 0 var(--nav-gutter);
         margin-left: calc(var(--nav-gutter) * -1);
         margin-right: calc(var(--nav-gutter) * -1);
-
-        //&:after {
-        //  content: '';
-        //  position: absolute;
-        //  bottom: 0;
-        //  left: 0;
-        //  right: 0;
-        //  height: 1px;
-        //  background: #ccc;
-        //}
-
-        > a {
-          padding: .75rem;
-          height: 100%;
-          position: relative;
-          white-space: nowrap;
-
-          + a {
-            margin-left: 3rem;
-          }
-
-          &.btn {
-            + .btn {
-              margin-left: 1rem;
-            }
-          }
-
-          .icon, [class*="icon-"] {
-            margin-right: .25rem;
-          }
-
-          &.btn {
-            //border-bottom-left-radius: 0;
-            //border-bottom-right-radius: 0;
-          }
-
-          &:not(.btn) {
-            padding: .75rem 0;
-            color: $gray-700;
-          }
-
-          &.active {
-
-            &:not(.btn) {
-              color: $black;
-            }
-
-            &:after {
-              content: '';
-              height: 2px;
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              width: 100%;
-              background: $dark;
-              border-radius: 2px;
-            }
-          }
-
-        }
       }
-    }
   }
 
   header,

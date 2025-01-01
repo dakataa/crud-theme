@@ -1,3 +1,10 @@
+:root {
+  --gutter: 1.5rem;
+  --header-height: 40px;
+  --header-width: 60px;
+  --nav-width: 240px;
+}
+
 @keyframes unloadProgress {
   0% {
     width: 0;
@@ -76,10 +83,6 @@ body {
   display: flex;
   flex-direction: column;
 
-  --gutter: 1.5rem;
-  --header-height: 40px;
-  --header-width: 60px;
-
   @include media-breakpoint-up(md) {
     --gutter: 2.5rem;
   }
@@ -95,7 +98,7 @@ body {
   > header {
     z-index: 3;
 
-    .nav-toggler {
+    .btn-mobile {
       position: relative;
       width: 3rem;
       height: 2rem;
@@ -126,6 +129,25 @@ body {
 
       @include media-breakpoint-up(md) {
         display: none;
+      }
+
+      &.active {
+          > i {
+            &:after,
+            &:before {
+              margin: 0;
+              background: #fff;
+            }
+
+            &:after {
+              transform: rotate(-45deg) translate(-50%, -50%);
+              margin-left: 1px;
+            }
+
+            &:before {
+              transform: rotate(45deg) translate(-50%, -50%);
+            }
+          }
       }
     }
 
@@ -236,6 +258,12 @@ body {
 
       @include media-breakpoint-up(md) {
         --content-width: calc((100vw - var(--nav-width) - var(--header-width, 0)));
+      }
+
+      .table-responsive {
+        padding: 0 var(--gutter);
+        margin-left: calc(var(--gutter) * -1);
+        margin-right: calc(var(--gutter) * -1);
       }
     }
 
@@ -436,23 +464,8 @@ body {
     > header {
       z-index: 0;
 
-      .nav-toggler {
-        > i {
-          &:after,
-          &:before {
-            margin: 0;
-            background: #fff;
-          }
-
-          &:after {
-            transform: rotate(-45deg) translate(-50%, -50%);
-            margin-left: 1px;
-          }
-
-          &:before {
-            transform: rotate(45deg) translate(-50%, -50%);
-          }
-        }
+      .btn-mobile {
+        @extend .active
       }
     }
 
@@ -471,7 +484,7 @@ body {
             transform: translateX(0);
             box-shadow: 0 10px 37px rgba(0, 0, 0, 0.15);
 
-            .nav-toggler {
+            .btn-mobile {
               margin-left: auto;
             }
           }
@@ -479,7 +492,6 @@ body {
       }
     }
   }
-
 }
 
 .edit {
@@ -495,9 +507,9 @@ body {
     }
 
     nav {
-        padding: 0 var(--nav-gutter);
-        margin-left: calc(var(--nav-gutter) * -1);
-        margin-right: calc(var(--nav-gutter) * -1);
+        padding: 0 var(--gutter);
+        margin-left: calc(var(--gutter) * -1);
+        margin-right: calc(var(--gutter) * -1);
       }
   }
 

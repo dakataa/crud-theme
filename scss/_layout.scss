@@ -236,6 +236,10 @@ body {
       --wrap-width: 960px;
       --content-width: 100vw;
 
+      &:first-child {
+        --nav-width: 0px;
+      }
+
       z-index: 1;
 
       flex-grow: 1;
@@ -279,12 +283,13 @@ body {
         height: 100%;
         width: 100%;
 
-        > .item {
-          transition: margin 0.2s ease;
+        .item {
           margin-bottom: 1px;
+        }
 
+        > .item {
           &.active {
-            margin-bottom: 1rem;
+              margin-bottom: 1rem;
           }
         }
       }
